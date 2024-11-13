@@ -423,6 +423,9 @@ function get_platform() {
             *ODROID-C2)
                 __platform="odroid-c2"
                 ;;
+            *BeagleY-AI)
+                __platform="beagleyai"
+                ;;
             "Freescale i.MX6 Quad/DualLite (Device Tree)")
                 __platform="imx6"
                 ;;
@@ -581,6 +584,12 @@ function platform_rockpro64() {
 function platform_rpi3() {
     cpu_armv8 "cortex-a53"
     __platform_flags+=(rpi gles)
+}
+
+function platform_beagleyai() {
+    echo "BeagleY-AI platform selected"
+    cpu_armv8 "cortex-a53"
+    __platform_flags+=(x11 gles)
 }
 
 function platform_rpi4() {
